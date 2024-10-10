@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Table from './Table';
+import Table from '../Components/Table';
 import Summary from '@/molecules/Summary';
 
 export default function Home() {
