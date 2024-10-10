@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Table from '../Components/Table';
 import Summary from '@/molecules/Summary';
 import YearSelection from '@/Components/YearSelection/YearSelection';
+import ADDvTable from '@/Components/ADDvTable';
 
 export default function Home() {
   const customers = {
@@ -164,6 +165,78 @@ export default function Home() {
       key: 'numTrades',
     },
   ];
+  const ADDvData = [
+    {
+      rank: 1,
+      monthyear: 'Mar,24',
+      tradedQty: 6825600,
+      vwap: 120,
+      movePercent: '33%',
+    },
+    {
+      rank:2,
+      monthyear: 'APR,24',
+      tradedQty: 6825600,
+      vwap: 120,
+      movePercent: '33%',
+    },
+    {
+      rank: 3,
+      monthyear: 'MAY,24',
+      tradedQty: 6825600,
+      vwap: 120,
+      movePercent: '33%',
+    },
+    {
+      rank: 4,
+      monthyear: 'JUN,24',
+      tradedQty: 6825600,
+      vwap: 120,
+      movePercent: '33%',
+    },
+    {
+      rank: 5,
+      monthyear: 'JUL,24',
+      tradedQty: 6825600,
+      vwap: 120,
+      movePercent: '33%',
+    },
+  ];
+  const DDVTabelHeads = [
+    {
+      id: 1,
+      label: 'Rank',
+      key: 'rank',
+    },
+    {
+      id: 2,
+      label: 'Month,Year',
+      key: 'monthyear',
+    },
+    {
+      id: 3,
+      label: 'Trading QTY',
+      key: 'tradedQty',
+    },
+    {
+      id: 4,
+      label: 'Vwap',
+      key: 'vwap',
+    },
+    {
+      id: 5,
+      label: '% Move',
+      key: 'movePercent',
+    },
+   
+   
+ 
+  
+   
+    
+   
+ 
+  ];
   const [showYears, setShowYears] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedYear, setSelectedYear] = useState(null);
@@ -225,6 +298,29 @@ export default function Home() {
         Heading="Top 20 Delivery Days"
         data={top20DaysData}
       />
+        <div className="flex w-full justify-start mt-10">
+        <h1 className="text-[24px] font-semibold text-[#101828]">
+        ADDV Shockers
+        </h1>
+      </div>
+    <div className='flex flex-col lg:flex-row gap-4 w-full mt-8'>
+      <div className='flex flex-col gap-3 w-full'>
+      <h1 className="text-[24px] font-semibold text-[#101828]">
+      Top 5 ADDV Months
+        </h1>
+      <ADDvTable TableHeads={DDVTabelHeads}
+        Heading="Top 20 Delivery Days"
+        data={ADDvData}/>
+      </div>
+      <div className='flex flex-col gap-3 w-full'>
+      <h1 className="text-[24px] font-semibold text-[#101828]">
+      Lowest 5 Addv Months
+        </h1>
+      <ADDvTable TableHeads={DDVTabelHeads}
+        Heading="Top 20 Delivery Days"
+        data={ADDvData}/>
+      </div>
+    </div>
     </div>
   );
 }
