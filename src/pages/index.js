@@ -5,6 +5,8 @@ import YearSelection from '@/Components/YearSelection/YearSelection';
 import ADDvTable from '@/Components/ADDvTable';
 import ADDVSockersTable from '@/Components/ADDVSockersTable';
 import AnnouncementTable from '@/Components/AnnouncementTable';
+import DealsTabel from '@/Components/DealsTabel';
+import Heading from '@/Atoms/Heading';
 
 export default function Home() {
   const customers = {
@@ -648,13 +650,33 @@ export default function Home() {
       pdf: '',
     },
   ];
+  const DealsTabelHeads = [
+    { label: 'Client Name', key: 'label' },
+    { label: 'Exchange', key: 'Exchange' },
+    { label: 'Date', key: 'Date' },
+    { label: 'Buy/Sell', key: 'Buy/Sell' },
+    { label: 'Traded Qty', key: 'TradedQty' },
+    { label: 'Average', key: 'Average' },
+    { label: 'Traded Value', key: 'TradedValue' },
+  ];
+  const DealsTabelData = [
+    {
+      id: 1,
+      label: 'EKTA HALWASIYA',
+      Exchange: 'BSE',
+      Date: '26 Oct, 24',
+      BuySell: 'SELL',
+      TradedQty: '1,67,444',
+      Average: 79,
+      TradedValue: '1,67,444',
+    },
+  ];
   return (
     <div className="flex flex-col w-full lg:max-w-[1280px] justify-start items-start mx-auto mt-10 px-5">
       <Summary customers={customers} members={members} active={active} />
       <div className="flex w-full justify-start mt-10">
-        <h1 className="text-[24px] font-semibold text-[#101828]">
-          Top 20 Delivery Days
-        </h1>
+      
+        <Heading title="Top 20 Delivery Days"/>
       </div>
       <Table
         TableHeads={top20DaysTabelHeads}
@@ -662,9 +684,8 @@ export default function Home() {
         data={top20DaysData}
       />
       <div className="flex w-full justify-start mt-10">
-        <h1 className="text-[24px] font-semibold text-[#101828]">
-          Top 10 Delivery Days
-        </h1>
+        
+        <Heading title="Top 10 Delivery Days"/>
       </div>
       <div className="flex w-full flex-col gap-4 xs:flex-row xs:justify-between items-center mt-5">
         <div className="NewInputTpeV3Shodow border border-[#EAECF0] rounded-[12px] bg-white flex gap-2 items-center justify-center h-[44px] xs:w-[354px] w-[330px] p-2">
@@ -702,15 +723,13 @@ export default function Home() {
         data={top20DaysData}
       />
       <div className="flex w-full justify-start mt-10">
-        <h1 className="text-[24px] font-semibold text-[#101828]">
-          ADDV Shockers
-        </h1>
+      
+        <Heading title=" ADDV Shockers"/>
       </div>
       <div className="flex flex-col lg:flex-row gap-4 w-full mt-8">
         <div className="flex flex-col gap-3 w-full">
-          <h1 className="text-[24px] font-semibold text-[#101828]">
-            Top 5 ADDV Months
-          </h1>
+         
+          <Heading title="Top 5 ADDV Months"/>
           <ADDvTable
             TableHeads={DDVTabelHeads}
             Heading="Top 20 Delivery Days"
@@ -731,9 +750,8 @@ export default function Home() {
 
       <div className="flex flex-col lg:flex-row gap-4 w-full mt-8">
         <div className="flex flex-col gap-3 w-full">
-          <h1 className="text-[24px] font-semibold text-[#101828]">
-            ADDV Shockers
-          </h1>
+         
+          <Heading title="ADDV Shockers"/>
           <ADDVSockersTable
             TableHeads={ADVSockersTabelHeads}
             Heading="Top 20 Delivery Days"
@@ -752,9 +770,8 @@ export default function Home() {
         </div>
       </div>
       <div className="flex w-full justify-start mt-10">
-        <h1 className="text-[24px] font-semibold text-[#101828]">
-          Corporate Announcements
-        </h1>
+        
+        <Heading title="Corporate Announcements"/>
       </div>
       <div className="flex w-full flex-col gap-4 xs:flex-row xs:justify-between items-center mt-5">
         <div className="relative">
@@ -780,6 +797,46 @@ export default function Home() {
         TableHeads={AnnouncementTabelHeads}
         data={AnnouncementTabelData}
       />
+      <div className="flex flex-col lg:flex-row gap-4 w-full mt-8">
+        <div className="flex flex-col gap-3 w-full">
+          
+          <Heading title="Top 5 ADDV Months"/>
+          <ADDvTable
+            TableHeads={DDVTabelHeads}
+            data={ADDvData}
+          />
+        </div>
+        <div className="flex flex-col gap-3 w-full">
+          
+          <Heading title="Lowest 5 Addv Months"/>
+          <ADDvTable
+            TableHeads={DDVTabelHeads}
+            data={ADDvData}
+          />
+        </div>
+      </div>
+
+      <div className="flex flex-col  gap-8 w-full mt-8">
+        <div className="flex flex-col gap-3 w-full">
+        
+          <Heading title=" Bulk Deals"/>
+          <DealsTabel
+            TableHeads={DealsTabelHeads}
+            Heading="Top 20 Delivery Days"
+            data={DealsTabelData}
+          />
+        </div>
+        <div className="flex flex-col gap-3 w-full">
+         
+
+          <Heading title=" Block Deals"/>
+          <DealsTabel
+            TableHeads={DealsTabelHeads}
+            Heading="Top 20 Delivery Days"
+            data={DealsTabelData}
+          />
+        </div>
+      </div>
     </div>
   );
 }

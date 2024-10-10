@@ -39,7 +39,7 @@ const TableWithPagination = (props) => {
   };
 
   return (
-    <div className="container mx-auto p-4 ">
+    <div className="container mx-auto  ">
       <table className="min-w-full table-auto border-collapse border border-gray-200 rounded-[40px]">
         <thead>
           <tr>

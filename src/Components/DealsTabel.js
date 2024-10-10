@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SortingArrow from './SortingArrow/SortingArrow';
 
-const AnnouncementTable = (props) => {
+const DealsTabel = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
   const [sortConfig, setSortConfig] = useState(null);
@@ -39,7 +39,7 @@ const AnnouncementTable = (props) => {
   };
 
   return (
-    <div className="container mx-auto  ">
+    <div className="container mx-auto ">
       <table className="min-w-full table-auto border-collapse border border-gray-200 rounded-[40px]">
         <thead>
           <tr>
@@ -66,19 +66,25 @@ const AnnouncementTable = (props) => {
         </thead>
         <tbody>
           {currentItems.map((item, index) => (
-            <tr key={index} className="hover:bg-[#D4EAFF] border border-b-1 bg-gray-100">
-              <td className="text-center px-4 py-8 font-medium text-[14px] text-[#101828]">{item.label}</td>
-              <td className="whitespace-nowrap text-center px-4 py-8 font-medium text-[14px] text-[#101828]">{item.date}</td>
-              <td className= "whitespace-nowrap text-center px-4 py-8 font-medium text-[14px] text-[#101828]">{item.time}</td>
-              <td className="text-center px-4 py-8 font-medium text-[14px] text-[#101828]">{item.description}</td>
+            <tr key={index} className="border border-b-1">
+              <td className="text-center px-4 py-4 font-medium text-[14px] text-[#101828]">{item.label}</td>
+              <td className="text-center px-4 py-4 font-medium text-[14px] text-[#101828]">{item.Exchange}</td>
+              <td className="text-center px-4 py-4 font-medium text-[14px] text-[#101828]">{item.Date}</td>
+              <td className="text-center px-4 py-4 font-medium text-[14px] text-[#101828]">{item.BuySell}</td>
               <td
-  className={`text-center px-4 py-8 font-medium text-[14px] leading-[20px] cursor-pointer`}
->
-  <a href="../Assets/Files/your-pdf-file.pdf" target="_blank" rel="noopener noreferrer">
-    <img src="../Assets/Images/PDF.svg" alt="Open PDF" />
-  </a>
-</td>
-
+                className={`text-center px-4 py-4 font-medium text-[14px] leading-[20px] text-[#101828]`}
+              >
+                {item.TradedQty}
+              </td>
+              <td
+                className={`text-center px-4 py-4 font-medium text-[14px] leading-[20px] text-[#101828]`}
+              >
+                {item.Average}
+              </td> <td
+                className={`text-center px-4 py-4 font-medium text-[14px] leading-[20px] text-[#101828]`}
+              >
+                {item.TradedValue}
+              </td> 
             </tr>
           ))}
         </tbody>
@@ -109,4 +115,4 @@ const AnnouncementTable = (props) => {
   );
 };
 
-export default AnnouncementTable;
+export default DealsTabel;

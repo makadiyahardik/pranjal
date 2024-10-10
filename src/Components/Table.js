@@ -32,7 +32,7 @@ export default function Table(props) {
     <div className="lg:max-w-[1280px] w-full flex flex-col justify-start items-center mx-auto mt-5">
       
 
-      <div className="overflow-x-auto customeScrollbar p-4 w-full mx-auto">
+      <div className="overflow-x-auto customeScrollbar  w-full mx-auto">
         <table className="min-w-full table-auto border-collapse ">
           <thead>
             <tr className="bg-white">
