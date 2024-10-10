@@ -672,7 +672,7 @@ export default function Home() {
     },
   ];
   return (
-    <div className="flex flex-col w-full lg:max-w-[1280px] justify-start items-start mx-auto mt-10 px-5">
+    <div className="flex flex-col w-full lg:max-w-[1280px] justify-start items-start mx-auto mt-10 px-5 pb-12">
       <Summary customers={customers} members={members} active={active} />
       <div className="flex w-full justify-start mt-10">
       
@@ -822,7 +822,6 @@ export default function Home() {
           <Heading title=" Bulk Deals"/>
           <DealsTabel
             TableHeads={DealsTabelHeads}
-            Heading="Top 20 Delivery Days"
             data={DealsTabelData}
           />
         </div>
@@ -832,7 +831,6 @@ export default function Home() {
           <Heading title=" Block Deals"/>
           <DealsTabel
             TableHeads={DealsTabelHeads}
-            Heading="Top 20 Delivery Days"
             data={DealsTabelData}
           />
         </div>

@@ -40,7 +40,7 @@ const AnnouncementTable = (props) => {
 
   return (
     <div className="lg:max-w-[1280px] w-full mx-auto  ">
-      <table className=" table-auto border-collapse border border-gray-200 rounded-[40px]">
+      <table className=" w-full border-collapse border border-gray-200 rounded-[40px]">
         <thead>
           <tr>
             {props.TableHeads.map((item, index) => (

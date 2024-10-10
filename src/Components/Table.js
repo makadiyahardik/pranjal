@@ -33,7 +33,7 @@ export default function Table(props) {
       
 
       <div className="overflow-x-auto customeScrollbar  w-full mx-auto">
-        <table className="min-w-full table-auto border-collapse ">
+        <table className="w-full border-collapse ">
           <thead>
             <tr className="bg-white">
               {props.TableHeads.map((item,index)=>{
