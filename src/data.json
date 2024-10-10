@@ -1,0 +1,39 @@
+[
+    {
+      "rank": 1,
+      "symbol": "ARVINDFASN",
+      "tradingDate": "25 Mar, 24",
+      "previous": 130,
+      "open": 130,
+      "high": 130,
+      "low": 130,
+      "close": 130,
+      "vwap": 130,
+      "tradedQty": 6825600,
+      "deliveredQty": 6825600,
+      "deliveryPercent": "33%",
+      "movePercent": "33%",
+      "freeFloatPercent": "33%",
+      "turnover": 6825600,
+      "numTrades": 6825600
+    },
+    {
+      "rank": 2,
+      "symbol": "ARVINDFASN",
+      "tradingDate": "25 Mar, 24",
+      "previous": 130,
+      "open": 130,
+      "high": 130,
+      "low": 130,
+      "close": 130,
+      "vwap": 130,
+      "tradedQty": 6825600,
+      "deliveredQty": 6825600,
+      "deliveryPercent": "33%",
+      "movePercent": "-5%",
+      "freeFloatPercent": "33%",
+      "turnover": 6825600,
+      "numTrades": 6825600
+    }
+  ]
+  

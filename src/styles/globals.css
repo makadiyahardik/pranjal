@@ -2,26 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body{
+  font-family: "Inter", sans-serif;
+}
+    /* Style for WebKit browsers (Chrome, Safari) */
+    .customeScrollbar::-webkit-scrollbar {
+      height: 10px; /* Height for horizontal scrollbar */
+      width: 10px;  /* Width for vertical scrollbar */
+      background: rgba(217, 217, 217, 0.08); /* Overall background */
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .customeScrollbar::-webkit-scrollbar-thumb {
+      background: rgba(217, 217, 217, 0.25); /* Scrollbar thumb background */
+      border-radius: 3px; /* Border radius */
   }
-}
+
+  .customeScrollbar::-webkit-scrollbar-track {
+      background: rgba(217, 217, 217, 0.08); /* Track background */
+  }
+
+  /* Optional: Style for Firefox */
+  .customeScrollbar {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(217, 217, 217, 0.25) rgba(217, 217, 217, 0.08);
+  }
+
+
+  .NewInputTpeV3Shodow{
+    filter: drop-shadow(0px 1px 1px rgba(46, 46, 46, 0.16));
+  
+  } 
