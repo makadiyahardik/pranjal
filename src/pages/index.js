@@ -773,7 +773,7 @@ export default function Home() {
         
         <Heading title="Corporate Announcements"/>
       </div>
-      <div className="flex w-full flex-col gap-4 xs:flex-row xs:justify-between items-center mt-5">
+      <div className="flex w-full flex-col gap-4 xs:flex-row xs:justify-between items-center my-6">
         <div className="relative">
           <div className="NewInputTpeV3Shodow border border-[#EAECF0] rounded-[12px] bg-white flex gap-2 items-center justify-center h-[44px] w-auto p-2 cursor-pointer">
             <img src="../Assets/Images/bar.svg" alt="logo" />
@@ -816,7 +816,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col  gap-8 w-full mt-8">
+      <div className="flex flex-col  gap-6 w-full mt-8">
         <div className="flex flex-col gap-3 w-full">
         
           <Heading title=" Bulk Deals"/>
