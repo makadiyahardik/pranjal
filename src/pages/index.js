@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect ,useRef } from 'react';
 import Table from '../Components/Table';
 import Summary from '@/molecules/Summary';
 import YearSelection from '@/Components/YearSelection/YearSelection';
@@ -7,8 +7,29 @@ import ADDVSockersTable from '@/Components/ADDVSockersTable';
 import AnnouncementTable from '@/Components/AnnouncementTable';
 import DealsTabel from '@/Components/DealsTabel';
 import Heading from '@/Atoms/Heading';
+import RawDataTable from '@/Components/RawDataTable';
+import HeaderComponent from '@/Components/HeaderComponent';
 
 export default function Home() {
+    // Create references for each section
+    const top20Ref = useRef(null);
+    const top10Ref = useRef(null);
+    const chartsRef = useRef(null);
+    const yearlyRef = useRef(null);
+    const monthlyRef = useRef(null);
+    const ADDVShockers = useRef(null);
+
+  
+    // Function to handle smooth scroll
+    const handleScroll = (ref) => {
+      if (ref.current) {
+        ref.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    };
+  
   const customers = {
     id: 1,
     label: 'Total customers',
@@ -671,8 +692,94 @@ export default function Home() {
       TradedValue: '1,67,444',
     },
   ];
+  const RawDataTableHeades = [
+    {
+      id: 1,
+      label: 'Rank',
+      key: 'rank',
+    },
+    {
+      id: 2,
+      label: 'Symbol',
+      key: 'symbol',
+    },
+    {
+      id: 3,
+      label: 'Trading Date',
+      key: 'tradingDate',
+    },
+    {
+      id: 4,
+      label: 'Previous',
+      key: 'previous',
+    },
+    {
+      id: 5,
+      label: 'Open',
+      key: 'open',
+    },
+    {
+      id: 6,
+      label: 'High',
+      key: 'high',
+    },
+    {
+      id: 7,
+      label: 'Low',
+      key: 'low',
+    },
+    {
+      id: 8,
+      label: 'Close',
+      key: 'close',
+    },
+    {
+      id: 9,
+      label: 'VWAP',
+      key: 'vwap',
+    },
+    {
+      id: 10,
+      label: 'Traded Qty',
+      key: 'tradedQty',
+    },
+    {
+      id: 11,
+      label: 'Delivered Qty',
+      key: 'deliveredQty',
+    },
+    {
+      id: 15,
+      label: 'Turn Over',
+      key: 'turnover',
+    },
+    {
+      id: 12,
+      label: 'Delivery %',
+      key: 'deliveryPercent',
+    },
+    {
+      id: 13,
+      label: 'Move %',
+      key: 'movePercent',
+    },
+    {
+      id: 14,
+      label: 'Free Float %',
+      key: 'freeFloatPercent',
+    },
+   
+    {
+      id: 16,
+      label: '# of Trades',
+      key: 'numTrades',
+    },
+  ];
   return (
-    <div className="flex flex-col w-full lg:max-w-[1280px] justify-start items-start mx-auto mt-10 px-5 pb-12">
+   <>
+    
+   <HeaderComponent top20Ref={top20Ref} top10Ref={top10Ref} chartsRef={chartsRef} yearlyRef={yearlyRef} monthlyRef={monthlyRef} ADDVShockers={ADDVShockers} handleScroll={handleScroll}/>
+   <div className="flex flex-col w-full lg:max-w-[1280px] justify-start items-start mx-auto mt-10 px-5 pb-12">
       <Summary customers={customers} members={members} active={active} />
       <div className="flex w-full justify-start mt-10">
       
@@ -748,7 +855,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-4 w-full mt-8">
+      <div className="flex flex-col lg:flex-row gap-4 w-full mt-8" ref={ADDVShockers}>
         <div className="flex flex-col gap-3 w-full">
          
           <Heading title="ADDV Shockers"/>
@@ -828,13 +935,32 @@ export default function Home() {
         <div className="flex flex-col gap-3 w-full">
          
 
-          <Heading title=" Block Deals"/>
+          <Heading title=" Block Deal"/>
           <DealsTabel
             TableHeads={DealsTabelHeads}
             data={DealsTabelData}
           />
         </div>
       </div>
+   <div className='mt-10'>   <Heading title=" Raw Data"/></div>
+
+      <div className="flex flex-col gap-4 xs:flex-row xs:justify-between items-center my-3">
+        <div className="relative">
+          <div className="NewInputTpeV3Shodow border border-[#EAECF0] rounded-[12px] bg-white flex gap-2 items-center justify-center h-[44px] w-auto p-2 cursor-pointer">
+            <img src="../Assets/Images/bar.svg" alt="logo" />
+            <p className="text-[#344054] text-[14px] font-semibold leading-[20px]">
+              {' '}
+              More filter
+            </p>
+          </div>
+        </div>
+       
+      </div>
+      <RawDataTable
+            TableHeads={RawDataTableHeades}
+            data={top20DaysData}
+          />
     </div>
+   </>
   );
 }
