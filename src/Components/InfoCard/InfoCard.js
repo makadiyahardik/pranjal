@@ -6,7 +6,7 @@ const InfoCard = (props) => {
          <img
           className="absolute right-3 bottom-3 "
           src={props.overAllPeformance === "inGrowth" ? "../Assets/Images/UpStock.svg": "../Assets/Images/DownStock.svg" }
-          alt="logo"
+          alt=""
           
         />
             <div className="flex justify-between items-center w-full">

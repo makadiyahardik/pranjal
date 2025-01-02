@@ -38,7 +38,6 @@ const YearSelection = (props) => {
     
     const handleYearClick = (year) => {
       props.setSelectedYear(year);
-      console.log(`Selected Year: ${year}`);
       props.setShowYears(false); 
     };
   return (
